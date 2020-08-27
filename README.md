@@ -1,2 +1,2 @@
 # lambda-large-payload-handler
-A Lambda request handler for use with SQS large payloads
+A Java Lambda request handler for use with SQS Events which have been created with the SQS Extended Client Library.

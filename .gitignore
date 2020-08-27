@@ -23,3 +23,6 @@
 hs_err_pid*
 /.idea/
 
+/lambda-large-payload-handler/LargeMessageHandler/lambda-large-message-handler.iml
+/lambda-large-payload-handler/.aws-sam/build/template.yaml
+/lambda-large-payload-handler/samconfig.toml
