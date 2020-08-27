@@ -6,6 +6,10 @@ The [amazon-sqs-java-extended-client-lib](https://github.com/awslabs/amazon-sqs-
 
 You can then use the same client lib to retreive messages from SQS. When you do this, the client library will automatically download the S3 object and inject it into the SQS message. For a consumer of the message the experience is seamless.
 
+![Java to Java](docs/java-to-java.png)
+
 When consuming SQS messages which have been created by the extended client library in AWS Lambda, the Lambda service doesn't do the automatic downloading from S3.
+
+![Java to Lambda](docs/java-to-lambda.png)
 
 In this example I show you how you can take the S3 reference, download the object and delete the object once processing has been completed.
