@@ -16,7 +16,8 @@ public class MessageSender {
         ExtendedClientConfiguration s3StorageDisabled = new ExtendedClientConfiguration()
                 .withPayloadSupportDisabled();
         ExtendedClientConfiguration s3StorageAlwaysEnabled = new ExtendedClientConfiguration()
-                .withPayloadSupportEnabled(amazonS3,"ms-extended-sqs-client");
+                .withPayloadSupportEnabled(amazonS3,"ms-extended-sqs-client")
+                .withAlwaysThroughS3(true);
         AmazonSQS sqsExtendedWithoutS3Storage =  new AmazonSQSExtendedClient(AmazonSQSClientBuilder.defaultClient(), s3StorageDisabled);
         AmazonSQS sqsExtendedWith3Storage =  new AmazonSQSExtendedClient(AmazonSQSClientBuilder.defaultClient(), s3StorageAlwaysEnabled);
 
