@@ -1,15 +1,5 @@
 # lambda-large-payload-handler
 
-A Java Lambda request handler for use with SQS Events which have been created with the SQS Extended Client Library.
+This project was made as a proof of concept.
 
-The [amazon-sqs-java-extended-client-lib](https://github.com/awslabs/amazon-sqs-java-extended-client-lib) allows you to send messages of up to 2GB. It does this by offloading the message into S3 storage. A reference to the S3 bucket and key is then sent with the SQS message instead of the full payload. 
-
-You can then use the same client lib to retreive messages from SQS. When you do this, the client library will automatically download the S3 object and inject it into the SQS message. For a consumer of the message the experience is seamless.
-
-![Java to Java](docs/java-to-java.png)
-
-When consuming SQS messages which have been created by the extended client library in AWS Lambda, the Lambda service doesn't do the automatic downloading from S3.
-
-![Java to Lambda](docs/java-to-lambda.png)
-
-In this example I show you how you can take the S3 reference, download the object and delete the object once processing has been completed.
+The best way to accomplish this is with [Powertools for AWS Lambda (Java)](https://docs.powertools.aws.dev/lambda/java/utilities/sqs_large_message_handling/)
